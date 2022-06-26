@@ -1,6 +1,11 @@
 # RSSchool NodeJS websocket task template
 > Static http server and base task packages.
 
+## Permissions
+  open System Preferences > Security & Privacy > Accessibility
+  (you might have to unlock the settings by clicking the lock icon in the bottom left hand corner) >
+  check "Terminal" or "VSCode" app in the list "Allow the apps below to control your computer"
+
 ## Installation
 1. Clone/download repo
 2. `npm install`
