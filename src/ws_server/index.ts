@@ -8,7 +8,7 @@ export default function start(): void {
     port: 8080,
   });
   wsServer.on('connection', (ws) => {
-    ws.on('message', (message: string) => {
+    ws.on('message', async (message: string) => {
       const command: string[] = message.toString().split(' ');
       var mouse: any = robot.getMousePos();
 
@@ -53,7 +53,8 @@ export default function start(): void {
           break;
 
         case 'prnt_scrn':
-          prnt_scrn(mouse.x, mouse.y, 100, 100)
+          const base64 = await prnt_scrn(mouse.x, mouse.y)
+          ws.send(`prnt_scrn ${base64}`)
           break;
 
         default:
